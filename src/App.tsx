@@ -38,7 +38,7 @@ function App() {
 			return {...prev, ...fields}
 		})
 	}
-	const { steps, currentStepIndex, step, isFirstStep, isLastStep, next, back } = useMultistepForm([
+	const { steps, currentStepIndex, setCurrentStepIndex, step, isFirstStep, isLastStep, next, back } = useMultistepForm([
 		<UserForm {...data} updateFields = {updateFields}  />,
 		<AddressForm {...data} updateFields={updateFields} />,
 		<AccountForm {...data} updateFields={updateFields} />
@@ -48,6 +48,8 @@ function App() {
 		e.preventDefault()
 		if (!isLastStep) return next()
 		alert ("Successful Account creation")
+		setData(INITIAL_DATA),
+		setCurrentStepIndex(0)
 	}
 
 
