@@ -33,8 +33,8 @@ export const UserForm = ({ firstName, lastName, age, updateFields }: UserFormPro
 			<label>Age</label>
 			<input
 				required
-				min={1}
-				type="text"
+				min={12}
+				type="number"
 				value={age}
 				onChange={e => updateFields({ age: e.target.value })}
 			/>
